@@ -1,0 +1,72 @@
+# ========================
+# Terraform
+# ========================
+
+# State files
+**/*.tfstate
+**/*.tfstate.*
+**/.terraform.tfstate.lock.info
+**/.terraform.lock.hcl
+# State backup files
+**/*.tfstate.backup
+
+# Crash log files
+**/crash.log
+**/crash.*.log
+
+# Terraform lock file (keep this if you want to pin provider versions)
+# **/.terraform.lock.hcl
+
+# Terraform directories (plugins, modules, cache)
+**/.terraform/
+
+# Terraform plan files
+**/*.tfplan
+**/tfplan
+
+# Override files (local overrides, not meant to be shared)
+**/override.tf
+**/override.tf.json
+**/*_override.tf
+**/*_override.tf.json
+
+# CLI config file
+**/.terraformrc
+**/terraform.rc
+
+# ========================
+# Secrets & Credentials
+# ========================
+
+# DO NOT ignore .tfvars — tracked intentionally
+# But ignore sensitive var files if you have them
+**/*.tfvars.json
+**/secrets.tfvars
+**/secret.tfvars
+
+# General secrets
+.env
+.env.*
+*.pem
+*.key
+*_rsa
+*_rsa.pub
+
+# ========================
+# OS & Editor
+# ========================
+
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# ========================
+# Logs & Temp
+# ========================
+
+*.log
+*.tmp
+*.bak
