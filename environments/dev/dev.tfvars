@@ -1,2 +1,3 @@
-root_cidr_block = "10.0.0.0/16"
-root_tag_name = "routbox_dev_vpc"
+env      = "dev"
+vpc_cidr = "10.10.0.0/16"
+region   = "us-east-1"

@@ -1,6 +1,6 @@
 variable "env" {
   type    = string
-  default = "dev"
+  default = "staging"
 }
 
 variable "vpc_cidr" {
