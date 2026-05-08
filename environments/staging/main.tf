@@ -19,3 +19,11 @@ module "network" {
   vpc_cidr = var.vpc_cidr
   region   = var.region
 }
+
+module "eks" {
+  source = "../../modules/eks"
+
+  cluster_name       = var.env
+  vpc_id             = module.network.vpc_id
+  private_subnet_ids = module.network.private_subnet_ids
+}
