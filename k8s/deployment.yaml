@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shipments-api
+  labels:
+    app: shipments-api
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: shipments-api
+  template:
+    metadata:
+      labels:
+        app: shipments-api
+    spec:
+      containers:
+        - name: shipments-api
+          image: 738678806918.dkr.ecr.us-east-1.amazonaws.com/routebox-shipments-api:latest
+          ports:
+            - containerPort: 3000
+          envFrom:
+            - configMapRef:
+                name: shipments-api-config
+            - secretRef:
+                name: shipments-api-secret

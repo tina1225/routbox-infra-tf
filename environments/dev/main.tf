@@ -32,3 +32,13 @@ module "shipments_api_ecr" {
 
  name = "routebox-shipments-api"
 }
+
+module "rds" {
+  source = "../../modules/rds"
+
+  env                       = var.env
+  vpc_id                    = module.network.vpc_id
+  subnet_ids                = module.network.private_subnet_ids
+  allowed_security_group_id = module.eks.cluster_security_group_id
+  db_password               = var.db_password
+}
