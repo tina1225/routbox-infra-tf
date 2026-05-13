@@ -23,9 +23,10 @@ module "network" {
 module "eks" {
   source = "../../modules/eks"
 
-  cluster_name       = var.env
-  vpc_id             = module.network.vpc_id
-  private_subnet_ids = module.network.private_subnet_ids
+  cluster_name            = var.env
+  vpc_id                  = module.network.vpc_id
+  private_subnet_ids      = module.network.private_subnet_ids
+  github_actions_role_arn = "arn:aws:iam::738678806918:role/github-actions-eks"
 }
 module "shipments_api_ecr" {
  source = "../../modules/ecr"
